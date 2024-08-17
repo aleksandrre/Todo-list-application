@@ -40,6 +40,8 @@ Replace <username> and <password> with your MongoDB credentials.
 
 # Usage
 
+Live Application: The full application is deployed and can be accessed at https://todo-list-application-gamma.vercel.app/
+
 Frontend: Access the application at `http://localhost:5173`
 
 Backend: The API is available at http://localhost:5000/books
