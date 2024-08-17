@@ -13,7 +13,7 @@ const DeleteBooks = () => {
   const handleDeleteAllBooks = () => {
     setLoading(true);
     axios
-      .delete(`https://merapp.onrender.com/books`)
+      .delete(`https://todo-list-application-dym4.onrender.com/books`)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("All books deleted successfully", {

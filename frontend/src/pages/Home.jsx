@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get("https://merapp.onrender.com/books")
+      .get("https://todo-list-application-dym4.onrender.com/books")
       .then((response) => {
         setBooks(response.data);
         setLoading(false);

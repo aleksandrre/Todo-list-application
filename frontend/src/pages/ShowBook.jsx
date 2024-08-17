@@ -12,7 +12,7 @@ const ShowBook = () => {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`https://merapp.onrender.com/books/${id}`)
+      .get(`https://todo-list-application-dym4.onrender.com/books/${id}`)
       .then((response) => {
         setBook(response.data);
         setLoading(false);
