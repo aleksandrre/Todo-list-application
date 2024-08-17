@@ -1,20 +1,25 @@
 import express from "express";
-import { PORT } from "./config.js";
 import mongoose from "mongoose";
-import booksRoute from "./routes/booksRoutes.js";
 import cors from "cors";
+import booksRoute from "./routes/booksRoutes.js";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
+
 const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(express.json());
 app.use(cors());
 
 app.use("/books", booksRoute);
+
 mongoose
-  .connect(
-    "mongodb+srv://aleksandre:movidadro021@cluster0.xvb47fa.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGO_URI)
   .then(() => {
-    console.log("successfully connected");
-    app.listen(PORT, () => console.log(`App is listening to port ${PORT}`));
+    console.log("Successfully connected to MongoDB");
+    app.listen(PORT, () => console.log(`App is listening on port ${PORT}`));
   })
   .catch((e) => {
     console.log(e);
